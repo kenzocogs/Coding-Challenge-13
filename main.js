@@ -4,7 +4,7 @@ const productDisplay = document.getElementById('product-display')
 fetch('https://www.course-api.com/javascript-store-products')
     .then(response => {
         if (!response.ok) {
-            throw new Error ('Network response was not okay');
+            throw new Error ('Network response was not okay'); /
         }
         return response.json(); // return response as JSON
     })
@@ -23,8 +23,12 @@ fetch('https://www.course-api.com/javascript-store-products')
             productDisplay.appendChild(productDiv);
         });
     })
+    // Task 4: Handling Errors Gracefully
     .catch(error => {
+        // logging error in console
         console.error('There was a problem with the fetch operation:', error);
+        // displaying message on webpage if there is an error
+        productDisplay.innerHTML = `<h2> ERROR: Products have failed to load. Please try again later. </h2>`
     });
 
 
