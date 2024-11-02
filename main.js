@@ -4,7 +4,7 @@ const productDisplay = document.getElementById('product-display')
 fetch('https://www.course-api.com/javascript-store-products')
     .then(response => {
         if (!response.ok) {
-            throw new Error ('Network response was not okay'); /
+            throw new Error ('Network response was not okay'); 
         }
         return response.json(); // return response as JSON
     })
